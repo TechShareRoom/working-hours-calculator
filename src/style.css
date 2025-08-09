@@ -1,0 +1,322 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: #21213d;
+  color: #e0e0ff;
+  /* 1-a: Flexbox solo para el eje vertical */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* centra horizontalmente */
+  justify-content: flex-start;
+  /* evita que el footer suba */
+  min-height: 100vh;
+}
+
+.main-container {
+  max-width: 600px;
+  width: 90%;
+  padding: 40px;
+  border-radius: 20px;
+  margin-top: 6vh;
+  /* puedes ajustar el valor a tu gusto (5-10 vh) */
+  background-color: #2D2D4D;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #BDBDE7;
+  font-weight: 600;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.input-group label {
+  align-self: center;
+  text-align: center;
+  width: 100%;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.input-row input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #3C3C65;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  text-align: center;
+  -moz-appearance: textfield;
+  transition: all 0.3s ease;
+}
+
+.input-row input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(189, 189, 231, 0.5);
+  background-color: #4A4A7A;
+}
+
+.input-row input::-webkit-outer-spin-button,
+.input-row input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.unit {
+  font-size: 1.1rem;
+  color: #BDBDE7;
+  width: 25px;
+  text-align: center;
+}
+
+.results-container {
+  background-color: #4A4A7A;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.result-item p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #E0E0FF;
+}
+
+.result-item h2 {
+  font-size: 2.5rem;
+  margin: 10px 0 0;
+  font-weight: 700;
+  color: #9292F0;
+}
+
+/* ==========================================================================
+   Estilos para la imagen en la esquina superior izquierda
+   ========================================================================== */
+.top-left-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+}
+
+.top-left-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.top-left-link:hover img {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   Estilos para el corner de GitHub en la esquina superior derecha
+   ========================================================================== */
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+.github-corner {
+  fill: #151513;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* ==========================================================================
+   Vista móvil
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+    /* Bloquea el scroll horizontal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra horizontalmente */
+    justify-content: center;
+    /* Centra verticalmente */
+    min-height: 100vh;
+    padding: 10px;
+    /* Añadimos un poco de padding para el logo y el github corner */
+  }
+
+  /* Estilos para el logo y el icono de GitHub */
+  .top-left-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+  }
+
+  .github-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  /* Estilos para el contenedor principal */
+  .main-container {
+    max-width: 480px;
+    /* ancho máximo del “card” */
+    width: 92%;
+    /* 4 % de margen a cada lado */
+    padding: 20px 16px;
+    /* 20 arriba/abajo | 16 izq/der */
+    border-radius: 20px;
+    margin: 0 auto;
+    /* centrado horizontal */
+    margin-top: 1vh;
+    /* ya lo tenías */
+    background-color: #2d2d4d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+
+  .input-group label {
+    font-size: 1rem;
+    /* Aumenta el tamaño de fuente para las etiquetas */
+  }
+
+  .input-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    /* Aumenta el gap para separar los inputs */
+    margin-bottom: 12px;
+    /* Espacio debajo de cada fila */
+  }
+
+  .input-row input {
+    padding: 8px;
+    font-size: 1.2rem;
+    /* Aumenta el tamaño de fuente para los inputs */
+    min-width: 60px;
+    /* Ancho para los inputs */
+    flex: 0 0 60px;
+    /* No crezcan más que su ancho mínimo */
+  }
+
+  .unit {
+    font-size: 1rem;
+    /* Aumenta el tamaño de fuente para las unidades */
+  }
+
+  .title {
+    font-size: 1.4rem;
+    /* Aumenta el tamaño de fuente para el título */
+    margin-bottom: 12px;
+  }
+
+  .results-container {
+    padding: 12px;
+    width: 80%;
+    /* Reduce el ancho y centra */
+    margin: 0 auto;
+    /* Centra horizontalmente */
+  }
+
+  .result-item p {
+    font-size: 1.1rem;
+    /* Aumenta el tamaño de fuente para los párrafos */
+  }
+
+  .result-item h2 {
+    font-size: 1.6rem;
+    /* Aumenta el tamaño de fuente para los títulos */
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 12px 0;
+    margin: 0 auto;
+    /* centrado horizontal */
+    width: 92%;
+    /* mismo ancho que .main-container */
+    max-width: 480px;
+    /* idéntico límite */
+    text-align: center;
+    /* position: relative no es necesario */
+  }
+}
+
+/* ==========================================================================
+   Estilos para el pie de página
+   -------------------------------------------------------------------------- */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  /* gris más claro */
+  padding-bottom: 1rem;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
